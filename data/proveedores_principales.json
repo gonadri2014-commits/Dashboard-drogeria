@@ -1,0 +1,209 @@
+{
+  "nacionales": [
+    {
+      "nombre": "Bayer Argentina S.A.",
+      "tipo": "multinacional",
+      "pct_ventas": 0.08,
+      "monto_anual_ars": 150355200000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Roche Argentina S.A.",
+      "tipo": "multinacional",
+      "pct_ventas": 0.07,
+      "monto_anual_ars": 131560800000.00002,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Pfizer S.R.L.",
+      "tipo": "multinacional",
+      "pct_ventas": 0.07,
+      "monto_anual_ars": 131560800000.00002,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Abbott Laboratories Argentina",
+      "tipo": "multinacional",
+      "pct_ventas": 0.06,
+      "monto_anual_ars": 112766400000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Novartis Argentina S.A.",
+      "tipo": "multinacional",
+      "pct_ventas": 0.05,
+      "monto_anual_ars": 93972000000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "GlaxoSmithKline Argentina",
+      "tipo": "multinacional",
+      "pct_ventas": 0.05,
+      "monto_anual_ars": 93972000000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Sanofi Aventis de Argentina",
+      "tipo": "multinacional",
+      "pct_ventas": 0.05,
+      "monto_anual_ars": 93972000000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Johnson & Johnson Argentina",
+      "tipo": "multinacional",
+      "pct_ventas": 0.04,
+      "monto_anual_ars": 75177600000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "AstraZeneca Argentina",
+      "tipo": "multinacional",
+      "pct_ventas": 0.04,
+      "monto_anual_ars": 75177600000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "MSD Argentina S.R.L.",
+      "tipo": "multinacional",
+      "pct_ventas": 0.04,
+      "monto_anual_ars": 75177600000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Laboratorio Bagó S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.04,
+      "monto_anual_ars": 75177600000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Laboratorio Roemmers S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.04,
+      "monto_anual_ars": 75177600000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Laboratorio LKM S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.03,
+      "monto_anual_ars": 56383200000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Laboratorio Temis-Lostaló",
+      "tipo": "nacional",
+      "pct_ventas": 0.03,
+      "monto_anual_ars": 56383200000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Gador S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.03,
+      "monto_anual_ars": 56383200000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Casasco S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.02,
+      "monto_anual_ars": 37588800000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Laboratorio Beta S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.02,
+      "monto_anual_ars": 37588800000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Elea Phoenix",
+      "tipo": "nacional",
+      "pct_ventas": 0.02,
+      "monto_anual_ars": 37588800000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Laboratorio Andrómaco",
+      "tipo": "nacional",
+      "pct_ventas": 0.02,
+      "monto_anual_ars": 37588800000.0,
+      "condicion_pago_dias": 75
+    },
+    {
+      "nombre": "Raffo S.A.",
+      "tipo": "nacional",
+      "pct_ventas": 0.02,
+      "monto_anual_ars": 37588800000.0,
+      "condicion_pago_dias": 75
+    }
+  ],
+  "importados": [
+    {
+      "nombre": "Fresenius Kabi AG (Alemania)",
+      "pct_ventas": 0.03,
+      "monto_anual_ars": 85357241379.31035,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Baxter International (EEUU)",
+      "pct_ventas": 0.025,
+      "monto_anual_ars": 71131034482.75862,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Medtronic (Irlanda)",
+      "pct_ventas": 0.02,
+      "monto_anual_ars": 56904827586.2069,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "B. Braun Melsungen (Alemania)",
+      "pct_ventas": 0.018,
+      "monto_anual_ars": 51214344827.586205,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Hospira (EEUU)",
+      "pct_ventas": 0.015,
+      "monto_anual_ars": 42678620689.655174,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Sandoz GmbH (Austria)",
+      "pct_ventas": 0.012,
+      "monto_anual_ars": 34142896551.72414,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Teva Pharmaceutical (Israel)",
+      "pct_ventas": 0.01,
+      "monto_anual_ars": 28452413793.10345,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Stryker Corp (EEUU)",
+      "pct_ventas": 0.008,
+      "monto_anual_ars": 22761931034.48276,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    },
+    {
+      "nombre": "Boston Scientific (EEUU)",
+      "pct_ventas": 0.007,
+      "monto_anual_ars": 19916689655.172417,
+      "condicion_pago_dias": 90,
+      "moneda": "USD"
+    }
+  ]
+}

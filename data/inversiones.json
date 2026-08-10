@@ -1,0 +1,115 @@
+{
+  "a\u00f1o": 2025,
+  "items": [
+    {
+      "id": 1,
+      "descripcion": "Modernizaci\u00f3n sistema WMS dep\u00f3sito central",
+      "tipo": "TI/Sistemas",
+      "unidad_negocio": "General",
+      "monto": 85000000.0,
+      "mes": 2,
+      "mes_nombre": "Febrero",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 2,
+      "descripcion": "Flota veh\u00edculos refrigerados (3 unidades)",
+      "tipo": "Infraestructura",
+      "unidad_negocio": "Medicamentos",
+      "monto": 120000000.0,
+      "mes": 3,
+      "mes_nombre": "Marzo",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 3,
+      "descripcion": "Expansi\u00f3n sucursal C\u00f3rdoba",
+      "tipo": "Infraestructura",
+      "unidad_negocio": "General",
+      "monto": 45000000.0,
+      "mes": 4,
+      "mes_nombre": "Abril",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 4,
+      "descripcion": "Implementaci\u00f3n m\u00f3dulo SAP HR",
+      "tipo": "TI/Sistemas",
+      "unidad_negocio": "General",
+      "monto": 18000000.0,
+      "mes": 5,
+      "mes_nombre": "Mayo",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 5,
+      "descripcion": "Equipamiento cadena de fr\u00edo",
+      "tipo": "Infraestructura",
+      "unidad_negocio": "Medicamentos",
+      "monto": 32000000.0,
+      "mes": 6,
+      "mes_nombre": "Junio",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 6,
+      "descripcion": "Plazo fijo rendimiento (excedente julio)",
+      "tipo": "Inversi\u00f3n financiera",
+      "unidad_negocio": "General",
+      "monto": 50000000.0,
+      "mes": 7,
+      "mes_nombre": "Julio",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 7,
+      "descripcion": "Renovaci\u00f3n equipos computaci\u00f3n",
+      "tipo": "TI/Sistemas",
+      "unidad_negocio": "General",
+      "monto": 12000000.0,
+      "mes": 8,
+      "mes_nombre": "Agosto",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 8,
+      "descripcion": "Expansi\u00f3n l\u00ednea cosm\u00e9tica Rosario",
+      "tipo": "Infraestructura",
+      "unidad_negocio": "Cosm\u00e9tica",
+      "monto": 28000000.0,
+      "mes": 9,
+      "mes_nombre": "Septiembre",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 9,
+      "descripcion": "Proyecto automatizaci\u00f3n picking",
+      "tipo": "TI/Sistemas",
+      "unidad_negocio": "General",
+      "monto": 95000000.0,
+      "mes": 10,
+      "mes_nombre": "Octubre",
+      "estado": "proyectado",
+      "observaciones": ""
+    },
+    {
+      "id": 10,
+      "descripcion": "Fondo de contingencia Q4",
+      "tipo": "Inversi\u00f3n financiera",
+      "unidad_negocio": "General",
+      "monto": 60000000.0,
+      "mes": 12,
+      "mes_nombre": "Diciembre",
+      "estado": "proyectado",
+      "observaciones": ""
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "IVA": {
+    "nombre": "IVA — F.2002",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "Declaración Jurada IVA mensual. Responsable Inscripto.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 160000000.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "IVA",
+      "DGI IVA",
+      "DEBITO AFIP IVA",
+      "ARCA IVA",
+      "F.2002",
+      "AFIP IVA"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 23.349 — RG ARCA 5377/2023 — terminación CUIT 7 → día 21"
+  },
+  "GANANCIAS": {
+    "nombre": "Ganancias — Anticipos Mensuales",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "Anticipos mensuales Impuesto a las Ganancias — Sociedades.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 200000000.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "GANANCIAS",
+      "ANTICIPO GANANCIAS",
+      "IG SOCIEDADES",
+      "IMP GANANCIAS"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 20.628 — terminación CUIT 7 → día 21"
+  },
+  "SICORE_GANANCIAS": {
+    "nombre": "SICORE — Retenciones Ganancias",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "Retenciones Ganancias a proveedores y honorarios. Agente de retención.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 100000000.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "SICORE",
+      "RET GANANCIAS",
+      "RETENCIONES GANANCIAS",
+      "SICORE GANANCIAS"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "RG ARCA 830 y modificatorias — terminación 7 → día 21"
+  },
+  "SICORE_IVA": {
+    "nombre": "SICORE — Retenciones IVA",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "Retenciones IVA a proveedores. Agente de retención.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 8000000,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "SICORE IVA",
+      "RET IVA",
+      "RETENCIONES IVA"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "RG ARCA 2854 — terminación 7 → día 21"
+  },
+  "SIRCREB": {
+    "nombre": "SIRCREB — Retenciones Bancarias IIBB",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "Sistema de retenciones bancarias IIBB. Aplica si es agente de retención.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 0.0,
+    "activo": false,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "SIRCREB",
+      "RET BANCARIA IIBB"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "RG COMARB — activar si aplica"
+  },
+  "GANANCIAS_DDJJ_ANUAL": {
+    "nombre": "Ganancias — DDJJ Anual Sociedades",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "Declaración jurada anual Ganancias SA. Cierre 31/12 → vence 5to mes.",
+    "frecuencia": "anual",
+    "mes_vencimiento": 5,
+    "dia_vencimiento": 21,
+    "monto_estimado": 0.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "GANANCIAS ANUAL",
+      "DDJJ GANANCIAS",
+      "IG ANUAL"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 20.628 — vence mayo del año siguiente al cierre"
+  },
+  "SIPA_F931": {
+    "nombre": "SIPA + Seg. Social — F.931",
+    "grupo": "Seguridad Social",
+    "descripcion": "Aportes y contribuciones SUSS. Presentación F.931 + pago.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 13,
+    "monto_estimado": 616000000.0,
+    "activo": true,
+    "categoria_extracto": "Cargas Sociales",
+    "keywords_extracto": [
+      "SIPA",
+      "F.931",
+      "AFIP SIPA",
+      "SUSS",
+      "CARGAS SOCIALES",
+      "ARCA SIPA"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 24.241 — F.931 SUSS — terminación 5-9 → día 13"
+  },
+  "OBRA_SOCIAL": {
+    "nombre": "Obra Social Empleados",
+    "grupo": "Seguridad Social",
+    "descripcion": "Aportes obra social. Se incluye en F.931. CCT 556/09 FATFA.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 13,
+    "monto_estimado": 57750000.0,
+    "activo": true,
+    "categoria_extracto": "Cargas Sociales",
+    "keywords_extracto": [
+      "OBRA SOCIAL",
+      "OSDE",
+      "IOMA",
+      "OSEN",
+      "OS EMPLEADOS",
+      "OBRA SOC FARM"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 23.660 — Incluido en F.931 — CCT 556/09 FATFA"
+  },
+  "ART": {
+    "nombre": "ART — Riesgos del Trabajo",
+    "grupo": "Seguridad Social",
+    "descripcion": "Prima mensual ART obligatoria para todos los empleados.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 28875000.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "ART ",
+      "PREVENCION ART",
+      "EXPERTA ART",
+      "FEDERACION ART",
+      "SWISS MEDICAL ART",
+      "GALENO ART"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 24.557 — Prima mensual según contrato con aseguradora"
+  },
+  "SEGURO_VIDA": {
+    "nombre": "Seguro de Vida Colectivo Obligatorio",
+    "grupo": "Seguridad Social",
+    "descripcion": "Seguro de vida colectivo obligatorio para todos los dependientes.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 15,
+    "monto_estimado": 12250000,
+    "activo": true,
+    "categoria_extracto": "Cargas Sociales",
+    "keywords_extracto": [
+      "SEGURO VIDA",
+      "SEG VIDA COLECTIVO",
+      "SMATA SEGUROS"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Decreto 1567/74 — Seguro de vida obligatorio empleadores"
+  },
+  "CUOTA_SINDICAL_FATFA": {
+    "nombre": "Cuota Sindical FATFA",
+    "grupo": "Sindicato — CCT 556/09",
+    "descripcion": "Retención y depósito cuota sindical FATFA. Del 1 al 10 de cada mes.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 10,
+    "monto_estimado": 38500000.0,
+    "activo": true,
+    "categoria_extracto": "Sueldos",
+    "keywords_extracto": [
+      "CUOTA SINDICAL",
+      "FATFA",
+      "SINDICATO FARM",
+      "ADEF"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "CCT 556/09 FATFA — depósito del 1 al 10 de cada mes"
+  },
+  "CONTRIB_SOLIDARIA": {
+    "nombre": "Contribución Solidaria FATFA",
+    "grupo": "Sindicato — CCT 556/09",
+    "descripcion": "Contribución solidaria empleador al sindicato. % s/remuneraciones.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 10,
+    "monto_estimado": 28875000.0,
+    "activo": true,
+    "categoria_extracto": "Sueldos",
+    "keywords_extracto": [
+      "CONTRIB SOLIDARIA",
+      "APORTE SOLIDARIO FATFA"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "CCT 556/09 FATFA Art. 50 — junto con cuota sindical"
+  },
+  "FONDO_CAPACITACION": {
+    "nombre": "Fondo de Capacitación FATFA",
+    "grupo": "Sindicato — CCT 556/09",
+    "descripcion": "Aporte fondo de capacitación del sector farmacéutico.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 10,
+    "monto_estimado": 1200000,
+    "activo": true,
+    "categoria_extracto": "Sueldos",
+    "keywords_extracto": [
+      "FONDO CAPACITACION",
+      "FATFA CAPACIT",
+      "ACADEMIA FARM"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "CCT 556/09 FATFA — Fondo de capacitación sectorial"
+  },
+  "IIBB_CM": {
+    "nombre": "IIBB — Convenio Multilateral (CM03)",
+    "grupo": "IIBB — Provincial",
+    "descripcion": "Anticipos mensuales IIBB Convenio Multilateral. Opera en varias provincias.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 21,
+    "monto_estimado": 3000000000.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "INGRESOS BRUTOS",
+      "IIBB",
+      "RENTAS",
+      "AGIP",
+      "ARBA",
+      "CM03",
+      "CONV MULTILATERAL",
+      "DGR"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Convenio Multilateral — terminación 7 → aprox. día 21"
+  },
+  "IIBB_DDJJ_ANUAL": {
+    "nombre": "IIBB — DDJJ Anual CM05",
+    "grupo": "IIBB — Provincial",
+    "descripcion": "Declaración jurada anual Convenio Multilateral F.CM05.",
+    "frecuencia": "anual",
+    "mes_vencimiento": 6,
+    "dia_vencimiento": 30,
+    "monto_estimado": 0.0,
+    "activo": true,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "CM05",
+      "IIBB ANUAL",
+      "DDJJ IIBB",
+      "IIBB DDJJ"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Convenio Multilateral — vence 30/06 del año siguiente"
+  },
+  "TASA_MUNICIPAL": {
+    "nombre": "Tasa Municipal / ABL",
+    "grupo": "Municipal",
+    "descripcion": "Tasas municipales por habilitación y servicios. Varía por jurisdicción.",
+    "frecuencia": "mensual",
+    "dia_vencimiento": 20,
+    "monto_estimado": 0.0,
+    "activo": false,
+    "categoria_extracto": "Otros Egresos",
+    "keywords_extracto": [
+      "TASA MUNICIPAL",
+      "ABL",
+      "HABILITACION",
+      "TASA SEGURIDAD"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ordenanza municipal de cada jurisdicción — activar si corresponde"
+  },
+  "BIENES_PERSONALES": {
+    "nombre": "Bienes Personales / Activos",
+    "grupo": "ARCA — Nacionales",
+    "descripcion": "DDJJ anual si aplica para socios/accionistas.",
+    "frecuencia": "anual",
+    "mes_vencimiento": 6,
+    "dia_vencimiento": 22,
+    "monto_estimado": 0.0,
+    "activo": false,
+    "categoria_extracto": "AFIP",
+    "keywords_extracto": [
+      "BIENES PERSONALES",
+      "ACTIVOS"
+    ],
+    "cuit_empresa": "30538880627",
+    "base_legal": "Ley 23.966 — Solo si aplica a socios. Consultar con contador."
+  }
+}

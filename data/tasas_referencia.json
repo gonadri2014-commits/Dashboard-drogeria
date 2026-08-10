@@ -1,0 +1,17 @@
+{
+  "fecha_actualizacion": "2026-08-09",
+  "tasas_bcra": {
+    "tasa_politica_monetaria": 40.0,
+    "badlar_bancos_privados": 38.0,
+    "plazo_fijo_30d": 37.5,
+    "leliq": 40.0,
+    "prestamos_personales": 85.0,
+    "prestamos_pyme": 55.0
+  },
+  "tasas_afip": {
+    "interes_resarcitorio": 3.0,
+    "interes_punitorio": 4.5,
+    "tasa_plan_facilidades": 2.5
+  },
+  "notas": "Actualizar mensualmente con datos del BCRA"
+}

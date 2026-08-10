@@ -1,0 +1,126 @@
+{
+  "a\u00f1o": 2025,
+  "total_anual": 2400000000000,
+  "meses": {
+    "1": {
+      "total": 176000000000,
+      "Medicamentos": 126720000000,
+      "Cosm\u00e9tica": 22880000000,
+      "Nutrici\u00f3n": 15840000000,
+      "Veterinaria": 7040000000,
+      "Otros": 3520000000,
+      "egresos_total": 173888000000,
+      "resultado_neto": 2112000000
+    },
+    "2": {
+      "total": 164000000000,
+      "Medicamentos": 118080000000,
+      "Cosm\u00e9tica": 21320000000,
+      "Nutrici\u00f3n": 14760000000,
+      "Veterinaria": 6560000000,
+      "Otros": 3280000000,
+      "egresos_total": 162032000000,
+      "resultado_neto": 1968000000
+    },
+    "3": {
+      "total": 184000000000,
+      "Medicamentos": 132480000000,
+      "Cosm\u00e9tica": 23920000000,
+      "Nutrici\u00f3n": 16560000000,
+      "Veterinaria": 7360000000,
+      "Otros": 3680000000,
+      "egresos_total": 181792000000,
+      "resultado_neto": 2208000000
+    },
+    "4": {
+      "total": 190000000000,
+      "Medicamentos": 136800000000,
+      "Cosm\u00e9tica": 24700000000,
+      "Nutrici\u00f3n": 17100000000,
+      "Veterinaria": 7600000000,
+      "Otros": 3800000000,
+      "egresos_total": 187720000000,
+      "resultado_neto": 2280000000
+    },
+    "5": {
+      "total": 200000000000,
+      "Medicamentos": 144000000000,
+      "Cosm\u00e9tica": 26000000000,
+      "Nutrici\u00f3n": 18000000000,
+      "Veterinaria": 8000000000,
+      "Otros": 4000000000,
+      "egresos_total": 197600000000,
+      "resultado_neto": 2400000000
+    },
+    "6": {
+      "total": 216000000000,
+      "Medicamentos": 155520000000,
+      "Cosm\u00e9tica": 28080000000,
+      "Nutrici\u00f3n": 19440000000,
+      "Veterinaria": 8640000000,
+      "Otros": 4320000000,
+      "egresos_total": 213408000000,
+      "resultado_neto": 2592000000
+    },
+    "7": {
+      "total": 190000000000,
+      "Medicamentos": 136800000000,
+      "Cosm\u00e9tica": 24700000000,
+      "Nutrici\u00f3n": 17100000000,
+      "Veterinaria": 7600000000,
+      "Otros": 3800000000,
+      "egresos_total": 187720000000,
+      "resultado_neto": 2280000000
+    },
+    "8": {
+      "total": 186000000000,
+      "Medicamentos": 133920000000,
+      "Cosm\u00e9tica": 24180000000,
+      "Nutrici\u00f3n": 16740000000,
+      "Veterinaria": 7440000000,
+      "Otros": 3720000000,
+      "egresos_total": 183768000000,
+      "resultado_neto": 2232000000
+    },
+    "9": {
+      "total": 194000000000,
+      "Medicamentos": 139680000000,
+      "Cosm\u00e9tica": 25220000000,
+      "Nutrici\u00f3n": 17460000000,
+      "Veterinaria": 7760000000,
+      "Otros": 3880000000,
+      "egresos_total": 191672000000,
+      "resultado_neto": 2328000000
+    },
+    "10": {
+      "total": 204000000000,
+      "Medicamentos": 146880000000,
+      "Cosm\u00e9tica": 26520000000,
+      "Nutrici\u00f3n": 18360000000,
+      "Veterinaria": 8160000000,
+      "Otros": 4080000000,
+      "egresos_total": 201552000000,
+      "resultado_neto": 2448000000
+    },
+    "11": {
+      "total": 210000000000,
+      "Medicamentos": 151200000000,
+      "Cosm\u00e9tica": 27300000000,
+      "Nutrici\u00f3n": 18900000000,
+      "Veterinaria": 8400000000,
+      "Otros": 4200000000,
+      "egresos_total": 207480000000,
+      "resultado_neto": 2520000000
+    },
+    "12": {
+      "total": 286000000000,
+      "Medicamentos": 205920000000,
+      "Cosm\u00e9tica": 37180000000,
+      "Nutrici\u00f3n": 25740000000,
+      "Veterinaria": 11440000000,
+      "Otros": 5720000000,
+      "egresos_total": 282568000000,
+      "resultado_neto": 3432000000
+    }
+  }
+}

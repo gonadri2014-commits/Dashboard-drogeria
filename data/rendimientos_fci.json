@@ -1,0 +1,32 @@
+{
+  "fci_t0": {
+    "tna_ref": 29.0,
+    "tea_ref": 67.2,
+    "actualizado": "05/06/2026 07:26"
+  },
+  "fci_t1": {
+    "tna_ref": 33.0,
+    "tea_ref": 75.8,
+    "actualizado": "05/06/2026 07:26"
+  },
+  "lecaps": {
+    "tna_ref": 21.0,
+    "tea_ref": 71.0,
+    "actualizado": "05/06/2026 07:26"
+  },
+  "caucion": {
+    "tna_ref": 25.0,
+    "tea_ref": 61.0,
+    "actualizado": "05/06/2026 07:26"
+  },
+  "plazo_fijo": {
+    "tna_ref": 23.0,
+    "tea_ref": 46.4,
+    "actualizado": "05/06/2026 07:26"
+  },
+  "plazo_fijo_uva": {
+    "tna_ref": 3.0,
+    "tea_ref": null,
+    "actualizado": "05/06/2026 07:26"
+  }
+}

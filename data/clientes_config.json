@@ -1,0 +1,51 @@
+{
+  "farmacias": {
+    "grandes": {
+      "cant": 950,
+      "ticket_min": 800000,
+      "ticket_max": 5000000,
+      "cond": "30"
+    },
+    "medianas": {
+      "cant": 6650,
+      "ticket_min": 150000,
+      "ticket_max": 800000,
+      "cond": "30"
+    },
+    "peque\u00f1as": {
+      "cant": 1900,
+      "ticket_min": 30000,
+      "ticket_max": 150000,
+      "cond": "contado"
+    }
+  },
+  "institucionales": {
+    "hospitales_pub": {
+      "cant": 180,
+      "ticket_min": 2000000,
+      "ticket_max": 15000000,
+      "cond": "60"
+    },
+    "obras_sociales": {
+      "cant": 320,
+      "ticket_min": 5000000,
+      "ticket_max": 50000000,
+      "cond": "60"
+    },
+    "clinicas_priv": {
+      "cant": 180,
+      "ticket_min": 1000000,
+      "ticket_max": 8000000,
+      "cond": "30"
+    },
+    "municipios": {
+      "cant": 120,
+      "ticket_min": 500000,
+      "ticket_max": 3000000,
+      "cond": "90"
+    }
+  },
+  "total_clientes": 10300,
+  "ticket_mensual_promedio_ars": 19417475.72815534,
+  "condicion_cobro_promedio_dias": 38
+}

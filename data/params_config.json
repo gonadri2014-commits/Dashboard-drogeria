@@ -1,0 +1,21 @@
+{
+  "budget_anual": 2400000000000,
+  "saldo_inicial": 8000000000,
+  "sueldos_brutos": 1925000000,
+  "cargas_sociales_base": 616000000.0,
+  "art": 28875000.0,
+  "obra_social": 57750000.0,
+  "iva_mensual": 160000000.0,
+  "iibb_mensual": 3000000000.0,
+  "ganancias_mensual": 200000000.0,
+  "alquiler": 280000000,
+  "servicios": 85000000,
+  "seguros": 45000000,
+  "honorarios": 120000000,
+  "otros_fijos": 95000000,
+  "plan_afip_1": 12000000,
+  "plan_afip_2": 8500000,
+  "plan_afip_3": 0.0,
+  "pct_proveedores_ventas": 0.955,
+  "pct_importaciones": 0.18
+}

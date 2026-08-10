@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "rg": "RG 5678",
+    "descripcion": "Moratoria deuda IVA 2022-2023",
+    "tipo": "moratoria",
+    "impuesto": "IVA",
+    "deuda_original": 850000,
+    "deuda_vigente": 520000,
+    "tasa_interes_mensual": 2.5,
+    "cuota_mensual": 12000,
+    "cuotas_totales": 60,
+    "cuotas_pagadas": 28,
+    "fecha_adhesion": "01/01/2023",
+    "fecha_primera_cuota": "01/02/2023",
+    "fecha_vencimiento_final": "2025-09-01",
+    "dia_vencimiento": 16,
+    "estado": "vigente",
+    "numero_plan": "78901234",
+    "observaciones": ""
+  },
+  {
+    "id": 2,
+    "rg": "RG 5003",
+    "descripcion": "Plan de facilidades SIPA",
+    "tipo": "facilidades",
+    "impuesto": "SIPA",
+    "deuda_original": 320000,
+    "deuda_vigente": 160000,
+    "tasa_interes_mensual": 2.5,
+    "cuota_mensual": 8500,
+    "cuotas_totales": 24,
+    "cuotas_pagadas": 12,
+    "fecha_adhesion": "01/07/2024",
+    "fecha_primera_cuota": "01/08/2024",
+    "fecha_vencimiento_final": "2025-07-01",
+    "dia_vencimiento": 16,
+    "estado": "vigente",
+    "numero_plan": "45678901",
+    "observaciones": ""
+  }
+]

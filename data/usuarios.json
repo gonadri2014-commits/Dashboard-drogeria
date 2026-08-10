@@ -1,0 +1,26 @@
+{
+  "admin": {
+    "password_hash": "0e89f223e226ae63268cf39152ab75722e811b89d29efb22a852f1667bd22ae0",
+    "rol": "admin",
+    "nombre": "Administrador",
+    "email": "admin@drogdelsud.com",
+    "activo": true,
+    "ultimo_login": "04/06/2026 05:46"
+  },
+  "finanzas": {
+    "password_hash": "b1a42ec78c418bd4776caeeaef38dde78a161b0a66f43bdb203aaa8558437db1",
+    "rol": "analista",
+    "nombre": "Gerente de Finanzas",
+    "email": "finanzas@drogdelsud.com",
+    "activo": true,
+    "ultimo_login": "09/08/2026 20:31"
+  },
+  "readonly": {
+    "password_hash": "04e99d9aa851160fcc98e03853fbd7d3541286d7300fc0df93d8d6407e2c6f77",
+    "rol": "readonly",
+    "nombre": "Solo Lectura",
+    "email": "viewer@drogdelsud.com",
+    "activo": true,
+    "ultimo_login": null
+  }
+}
