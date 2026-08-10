@@ -532,9 +532,12 @@ def init_state():
 
 init_state()
 
-# Precarga demo: saldo inicial realista si no hay uno cargado
-if float(getattr(st.session_state.params, "saldo_inicial", 0) or 0) <= 0:
-    st.session_state.params.saldo_inicial = 13_900_000_000.0  # ~$13,9B (editable en sidebar/Parámetros)
+# Precarga demo (una sola vez): saldo inicial suficiente para que la caja no quede negativa
+if not st.session_state.get("_demo_precarga"):
+    _si = float(getattr(st.session_state.params, "saldo_inicial", 0) or 0)
+    if _si < 100_000_000_000:      # saldo demo bajo -> lo llevamos a un nivel sano
+        st.session_state.params.saldo_inicial = 350_000_000_000.0
+    st.session_state["_demo_precarga"] = True
 
 def recalcular_todo():
     params   = st.session_state.params
@@ -1194,8 +1197,18 @@ elif pagina == "📈 Budget y Desvíos":
     with tab_b1:
         df_comp = comparativo_budget_real(budget, df_fac if not df_fac.empty else None,
                                           df_cob if not df_cob.empty else None)
-        # Fallback demo: si no hay budget/real cargado, mostramos desvíos simulados
-        if df_comp.empty or ("tiene_datos" in df_comp.columns and not df_comp["tiene_datos"].any()):
+        # Fallback demo: sin budget/real cargado, o cuando las ventas reales son ínfimas
+        # frente al budget (datos demo del sistema sin calibrar -> desvío -100% falso)
+        _usar_demo = df_comp.empty
+        if not df_comp.empty and "tiene_datos" in df_comp.columns:
+            _cd = df_comp[df_comp["tiene_datos"]]
+            if _cd.empty:
+                _usar_demo = True
+            else:
+                _tb = float(_cd["budget"].sum()); _tv = float(_cd["venta_real"].sum())
+                if _tb <= 0 or _tv/_tb < 0.20:
+                    _usar_demo = True
+        if _usar_demo:
             _mn = ["Enero","Febrero","Marzo","Abril","Mayo","Junio",
                    "Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
             _estac = [0.92,0.90,1.06,1.00,1.05,1.12,1.18,1.15,1.02,1.04,1.06,1.10]
@@ -1207,7 +1220,7 @@ elif pagina == "📈 Budget y Desvíos":
                        -6:"Arranque de año lento, reposición del canal por debajo de lo previsto",
                        -4:"Menor rotación en dermocosmética",-3:"Desvío dentro de tolerancia",
                        -2:"Desvío dentro de tolerancia"}
-            _base = 19_000e6
+            _base = 190_000e6
             rows=[]
             for mn,es,dv in zip(_mn,_estac,_dv):
                 bud = _base*es; ven = bud*(1+dv/100); cob = ven*(0.86 if dv>=0 else 0.80)
@@ -2478,7 +2491,7 @@ Garantía: Aval SGR""",
 
             st.markdown(f"""
             <div style="background:#0D2D1F;border:1px solid #10B981;border-radius:10px;padding:16px;margin:12px 0">
-                <div style="font-size:13px;font-weight:600;color:#166534;margin-bottom:10px">
+                <div style="font-size:13px;font-weight:600;color:#6EE7B7;margin-bottom:10px">
                     ✅ Extracción completada — Confianza:
                     <span style="color:{conf_color};font-weight:700">{conf.upper()}</span>
                 </div>
@@ -3033,10 +3046,10 @@ elif pagina == "💰 Tesorería — FCI":
 
     st.markdown(f"""<div style="background:#0D2D1F;border:1px solid #10B981;
         border-radius:10px;padding:16px;margin-bottom:16px">
-        <div style="font-weight:600;color:#166534;font-size:14px">
+        <div style="font-weight:600;color:#6EE7B7;font-size:14px">
             🎯 Perfil: {rec['perfil']}
         </div>
-        <div style="color:#374151;font-size:13px;margin-top:4px">
+        <div style="color:#D1FAE5;font-size:13px;margin-top:4px">
             Rendimiento TNA ponderado: <b>{rec['rendimiento_pond_tna']}%</b> · 
             Ganancia estimada 30 días: <b>${rec['rendimiento_esperado_30d']/1e6:.1f}M ARS</b> · 
             Ganancia anualizada: <b>${rec['rendimiento_esperado_anual']/1e9:.2f}B ARS</b>
@@ -3051,7 +3064,7 @@ elif pagina == "💰 Tesorería — FCI":
                 border-radius:12px;padding:16px;text-align:center">
                 <div style="font-size:12px;font-weight:600;color:{d['color']};
                     text-transform:uppercase;margin-bottom:8px">{d['nombre']}</div>
-                <div style="font-size:26px;font-weight:700;color:#F1F5F9">
+                <div style="font-size:26px;font-weight:700;color:#0F172A">
                     ${d['monto']/1e9:.2f}B</div>
                 <div style="font-size:13px;color:#64748B">{d['porcentaje']}% del excedente</div>
                 <div style="margin:8px 0;font-size:14px;font-weight:600;color:{d['color']}">
@@ -3090,14 +3103,15 @@ elif pagina == "💰 Tesorería — FCI":
             x=ganancias, y=nombres, orientation="h",
             marker_color=colores, opacity=0.9,
             text=[f"${g:.1f}M · TNA {c['tna']}%" for g, c in zip(ganancias, comparacion)],
-            textposition="outside",
+            textposition="outside", textfont=dict(size=11, color="#1F2937"),
         ))
         fig_comp.update_layout(
-            height=280, margin=dict(t=10,b=10,l=10,r=120),
+            height=300, margin=dict(t=14,b=24,l=10,r=130),
             plot_bgcolor="white", paper_bgcolor="white",
-            xaxis=dict(title=f"Ganancia en {dias_sim}d ($M)", gridcolor="#F3F4F6"),
-            yaxis=dict(gridcolor="#F3F4F6"),
-            font=dict(family="Inter, sans-serif", size=11),
+            xaxis=dict(title=f"Ganancia en {dias_sim}d ($M)", gridcolor="#F3F4F6",
+                       tickfont=dict(color="#1F2937"), title_font=dict(color="#1F2937")),
+            yaxis=dict(gridcolor="#F3F4F6", tickfont=dict(color="#1F2937")),
+            font=dict(family="Inter, sans-serif", size=11, color="#1F2937"),
         )
         st.plotly_chart(fig_comp, use_container_width=True)
 
@@ -3585,17 +3599,17 @@ elif pagina == "📦 Productos y Estacionalidad":
     # Catálogo demo por categoría: precio unitario, volumen mensual base (unid), índice estacional
     if "prod_cat" not in st.session_state:
         st.session_state.prod_cat = pd.DataFrame([
-            {"cat":"Respiratorios / antigripales","precio":8500,"vol":42000,
+            {"cat":"Respiratorios / antigripales","unidad":"Farma ético (Rx)","precio":8500,"vol":42000,
              "estac":[1.35,1.20,0.95,0.85,1.05,1.45,1.60,1.50,1.00,0.85,0.80,0.90]},
-            {"cat":"Dermocosmética / solares","precio":14200,"vol":18000,
+            {"cat":"Dermocosmética / solares","unidad":"Dermocosmética","precio":14200,"vol":18000,
              "estac":[1.55,1.45,1.10,0.85,0.70,0.60,0.55,0.60,0.80,1.05,1.30,1.45]},
-            {"cat":"Analgésicos / AINEs","precio":5200,"vol":65000,
+            {"cat":"Analgésicos / AINEs","unidad":"OTC / Venta libre","precio":5200,"vol":65000,
              "estac":[1.05,1.00,1.02,0.98,1.00,1.03,1.05,1.04,0.99,0.97,0.96,0.91]},
-            {"cat":"Cardiovascular / crónicos","precio":11800,"vol":38000,
+            {"cat":"Cardiovascular / crónicos","unidad":"Farma ético (Rx)","precio":11800,"vol":38000,
              "estac":[1.02,0.99,1.01,1.00,1.00,1.01,1.02,1.01,1.00,0.99,0.98,0.97]},
-            {"cat":"Antialérgicos","precio":9600,"vol":22000,
+            {"cat":"Antialérgicos","unidad":"OTC / Venta libre","precio":9600,"vol":22000,
              "estac":[0.75,0.80,0.95,1.15,1.05,0.85,0.80,0.90,1.35,1.55,1.40,1.05]},
-            {"cat":"Gastrointestinales","precio":6800,"vol":30000,
+            {"cat":"Gastrointestinales","unidad":"OTC / Venta libre","precio":6800,"vol":30000,
              "estac":[1.20,1.00,0.95,0.95,0.98,1.00,1.02,1.00,0.98,1.00,1.10,1.40]},
         ])
     cat = st.session_state.prod_cat
@@ -3619,6 +3633,9 @@ elif pagina == "📦 Productos y Estacionalidad":
     filas = []
     serie_mensual_ars = [0.0]*12
     serie_mensual_un  = [0.0]*12
+    unidades = sorted(cat["unidad"].unique().tolist())
+    un_serie_ars = {u:[0.0]*12 for u in unidades}   # facturación mensual por unidad
+    un_fact_anio = {u:0.0 for u in unidades}
     for _, r in cat.iterrows():
         estac = list(r["estac"])
         prom_e = sum(estac)/12
@@ -3630,10 +3647,12 @@ elif pagina == "📦 Productos y Estacionalidad":
             unid_anio += un; fact_anio += ars
             serie_mensual_ars[m] += ars
             serie_mensual_un[m]  += un
+            un_serie_ars[r["unidad"]][m] += ars
+        un_fact_anio[r["unidad"]] += fact_anio
         mes_pico = MESES3[estac.index(max(estac))]
         amplitud = (max(estac)-min(estac))/prom_e*100 if prom_e else 0
         filas.append({
-            "cat":r["cat"], "precio_lista":r["precio"], "precio_aj":precio_aj,
+            "cat":r["cat"], "unidad":r["unidad"], "precio_lista":r["precio"], "precio_aj":precio_aj,
             "vol_mes":r["vol"], "unid_anio":unid_anio, "fact_anio":fact_anio,
             "mes_pico":mes_pico, "amplitud":amplitud,
             "un_mes":r["vol"]*estac[idx_mes]*fv,
@@ -3656,7 +3675,59 @@ elif pagina == "📦 Productos y Estacionalidad":
     with k4: st.metric("🌡️ Más estacional", mas_estac["cat"].split(" / ")[0],
                        f"amplitud {mas_estac['amplitud']:.0f}% · pico {mas_estac['mes_pico']}")
 
-    tab_p1, tab_p2, tab_p3 = st.tabs(["📈 Estacionalidad", "💰 Proyección por categoría", "✏️ Editar catálogo"])
+    tab_p0, tab_p1, tab_p2, tab_p3 = st.tabs([
+        "🏢 Por unidad de negocio", "📈 Estacionalidad por producto",
+        "💰 Proyección por categoría", "✏️ Editar catálogo"])
+
+    # ── TAB 0: unidad de negocio ────────────────────────────────────────
+    with tab_p0:
+        st.markdown("#### Estacionalidad de ventas por unidad de negocio (MM$ por mes)")
+        pal_u = {"Farma ético (Rx)":"#3B82F6","OTC / Venta libre":"#10B981","Dermocosmética":"#F59E0B"}
+        fig_u = go.Figure()
+        for u in unidades:
+            fig_u.add_trace(go.Scatter(
+                x=MESES3, y=[v/1e6 for v in un_serie_ars[u]], mode="lines+markers",
+                name=u, line=dict(width=3, color=pal_u.get(u,"#8B5CF6")), marker=dict(size=6),
+                hovertemplate="<b>%{x}</b><br>"+u+": $%{y:,.0f}M<extra></"+"extra>"))
+        fig_u = plotly_layout(fig_u, 380)
+        fig_u.update_layout(yaxis_title="Facturación mensual (MM$)")
+        st.plotly_chart(fig_u, use_container_width=True)
+
+        colu1, colu2 = st.columns([1,1])
+        with colu1:
+            st.markdown("#### Facturación anual por unidad")
+            uu = sorted(un_fact_anio.items(), key=lambda x: x[1], reverse=True)
+            fig_ub = go.Figure(go.Bar(
+                x=[v/1e9 for _,v in uu], y=[u for u,_ in uu], orientation="h",
+                marker_color=[pal_u.get(u,"#8B5CF6") for u,_ in uu],
+                text=[f"${v/1e9:,.1f}B" for _,v in uu], textposition="outside",
+                textfont=dict(size=12, color="#1F2937"),
+                hovertemplate="<b>%{y}</b><br>$%{x:,.1f}B/año<extra></"+"extra>"))
+            fig_ub = plotly_layout(fig_ub, 280)
+            fig_ub.update_layout(showlegend=False, xaxis_title="Facturación anual (B$)")
+            st.plotly_chart(fig_ub, use_container_width=True)
+        with colu2:
+            st.markdown("#### Participación (share) por unidad")
+            tot_u = sum(un_fact_anio.values()) or 1
+            fig_up = go.Figure(go.Pie(
+                labels=list(un_fact_anio.keys()),
+                values=list(un_fact_anio.values()), hole=0.5,
+                marker=dict(colors=[pal_u.get(u,"#8B5CF6") for u in un_fact_anio.keys()]),
+                textinfo="label+percent", textfont=dict(size=12, color="white"),
+                hovertemplate="<b>%{label}</b><br>$%{value:,.0f}<extra></"+"extra>"))
+            fig_up.update_layout(height=280, showlegend=False, paper_bgcolor="white",
+                margin=dict(t=10,b=10,l=10,r=10))
+            st.plotly_chart(fig_up, use_container_width=True)
+
+        st.markdown("#### Detalle: categorías dentro de cada unidad")
+        du = dfp[["unidad","cat","fact_anio","mes_pico","amplitud"]].sort_values(
+            ["unidad","fact_anio"], ascending=[True,False]).copy()
+        du["fact_anio"] = du["fact_anio"].apply(lambda x: f"${x/1e9:,.2f}B")
+        du["amplitud"]  = du["amplitud"].apply(lambda x: f"{x:.0f}%")
+        st.dataframe(du, hide_index=True, use_container_width=True,
+            column_config={"unidad":"Unidad de negocio","cat":"Categoría",
+                           "fact_anio":"Facturación/año","mes_pico":"Mes pico",
+                           "amplitud":"Amplitud estacional"})
 
     # ── TAB 1: curvas de estacionalidad + facturación mensual ───────────
     with tab_p1:
@@ -3721,16 +3792,19 @@ elif pagina == "📦 Productos y Estacionalidad":
 
     # ── TAB 3: editar catálogo ──────────────────────────────────────────
     with tab_p3:
-        st.markdown("**Editá precio y volumen base por categoría.** El patrón estacional se mantiene.")
-        cat_edit = cat[["cat","precio","vol"]].copy()
+        st.markdown("**Editá unidad, precio y volumen base por categoría.** El patrón estacional se mantiene.")
+        cat_edit = cat[["cat","unidad","precio","vol"]].copy()
         ed = st.data_editor(cat_edit, num_rows="fixed", use_container_width=True, key="prod_editor",
             column_config={
                 "cat":"Categoría",
+                "unidad": st.column_config.SelectboxColumn("Unidad de negocio",
+                          options=["Farma ético (Rx)","OTC / Venta libre","Dermocosmética"]),
                 "precio": st.column_config.NumberColumn("Precio unitario $", format="%.0f"),
                 "vol": st.column_config.NumberColumn("Volumen mensual base (u.)", format="%.0f"),
             })
         if st.button("💾 Guardar catálogo", type="primary"):
             base = st.session_state.prod_cat.copy()
+            base["unidad"] = ed["unidad"].values
             base["precio"] = ed["precio"].values
             base["vol"] = ed["vol"].values
             st.session_state.prod_cat = base
